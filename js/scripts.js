@@ -13,25 +13,25 @@ function newItem() {
     } else {
         $("#list").append(li);
     }
- // create the function for list item to get stricken //
+    // create the function for list item to get stricken //
     function crossOut() {
         li.toggleClass("strike");
     }
-// event handler requires a double click //
+    // event handler requires a double click //
     li.on("dblclick", function crossOut() {
         li.toggleClass("strike");
     });
-// create a variable for crossOutButton //
+    // create a variable for crossOutButton //
     let crossOutButton = $("<crossOutButton></crossOutButton>");
     // add text node to the button //
     crossOutButton.append(document.createTextNode("X"));
     // add the button to the list element //
     li.append(crossOutButton);
-// even handler to delete the list element //
+    // even handler to delete the list element //
     crossOutButton.on("click", deleteListItem);
     function deleteListItem() {
         li.addClass("delete");
     }
-// jquery enable reordering with mouse //
+    // jquery enable reordering with mouse //
     $("#list").sortable();
 }
